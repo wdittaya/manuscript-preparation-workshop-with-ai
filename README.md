@@ -118,3 +118,7 @@ plot figures. **You are the author and are accountable.** Always verify every
 AI-generated number and citation against the source, never upload confidential
 or unpublished material to public tools, and disclose AI use according to your
 target venue's policy.
+
+---
+
+*This workshop was prepared using Anthropic Claude Opus 4.8.*
