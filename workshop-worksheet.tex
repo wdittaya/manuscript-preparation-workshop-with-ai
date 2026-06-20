@@ -1,0 +1,375 @@
+%==============================================================
+%  WORKSHOP WORKSHEET  (student handout)
+%  Running example: Incoming Tourist Trends in Thailand
+%  Follow these steps across the whole 6-hour workshop.
+%==============================================================
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{chulapink}{RGB}{199,21,133}
+\definecolor{chulapinkdk}{RGB}{140,10,95}
+\definecolor{inkgray}{RGB}{55,55,60}
+\definecolor{softbg}{RGB}{246,238,243}
+\color{inkgray}
+
+% section styling
+\titleformat{\section}{\Large\bfseries\color{chulapinkdk}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries\color{chulapink}}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.1em}{0.4em}
+
+% header/footer
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{chulapink}\leaders\hrule height 0.8pt\hfill}}
+\lhead{\small\color{chulapinkdk}\textbf{Workshop Worksheet}}
+\rhead{\small\color{inkgray}Thai Inbound Tourism}
+\cfoot{\small\color{inkgray}\thepage}
+\lfoot{\small\color{inkgray}2022517}
+\rfoot{\small\color{inkgray}Workshop: 2026-06-21}
+
+% listings
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  backgroundcolor=\color{softbg},
+  frame=single,framerule=0pt,framesep=6pt,
+  breaklines=true,columns=fullflexible,
+  showstringspaces=false,keepspaces=true,xleftmargin=4pt,
+}
+
+% checkbox list
+\newcommand{\cb}{$\square$~}
+\newlist{checklist}{itemize}{1}
+\setlist[checklist]{label=$\square$,leftmargin=1.4em,itemsep=2pt}
+
+% prompt box
+\newtcolorbox{promptbox}{colback=softbg,colframe=chulapink,
+  boxrule=0.6pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,
+  fonttitle=\bfseries\color{white},colbacktitle=chulapink,
+  title=Copy-paste prompt for your AI assistant}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+
+\begin{document}
+
+%---------------- title block ----------------
+{\color{chulapink}\hrule height 2pt}
+\vspace{0.6em}
+{\Huge\bfseries\color{chulapinkdk}Workshop Worksheet}\\[0.3em]
+{\Large Writing \& Formatting a Research Article}\\[0.2em]
+{\large Running example: \textbf{Incoming Tourist Trends in Thailand, 2017--2024}}
+\vspace{0.5em}
+{\color{chulapink}\hrule height 2pt}
+\vspace{0.6em}
+
+\textit{Follow these steps in order. Each step matches a module and its \textbf{[LAB]} on the slides.
+By the end you will have a real LaTeX draft of a short tourism paper \emph{and} a matching slide. Tick each box as you finish.}
+
+%================= DATASET =================
+\section{The dataset}
+
+Everyone uses the same file: \texttt{tourist-data.xlsx} (in the \texttt{WritingManuscript} folder). It has two sheets.
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Sheet} & \textbf{Columns} & \textbf{Years} \\
+\midrule
+\texttt{Tourist-Number-Data} & Region, Nationality, Year, BE, Number & 2017--2024 \\
+\texttt{Tourist-Expense-Data} & Region, Nationality, Year, BE, Total/Medical Expense, Ratio & 2017--2023 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{The story to tell.} Arrivals peaked at \textbf{39.9M in 2019}, collapsed to \textbf{0.51M in 2021}
+during COVID-19, then recovered to \textbf{35.5M by 2024}. Top 2024 source markets: China, Malaysia,
+India, South Korea. Your paper documents this collapse-and-recovery.
+
+\subsection*{Sample abstract (use this in Step 2)}
+\begin{tcolorbox}[colback=softbg,colframe=chulapink!50,boxrule=0.5pt,arc=2pt]
+\small
+We examine inbound tourism to Thailand from 2017 to 2024 using official arrival and expenditure
+statistics. Arrivals rose from 35.6 million in 2017 to a pre-pandemic peak of 39.9 million in 2019,
+fell sharply to 0.51 million in 2021 amid COVID-19 border measures, and recovered to 35.5 million by
+2024. We characterise the recovery across source regions and quantify the shifting composition of
+top markets. The findings inform tourism-demand forecasting and policy for resilient recovery.
+\end{tcolorbox}
+
+%================= STEP 1 =================
+\section{Find a good venue \hfill {\normalfont\small (Module 1 $\cdot$ 20 min)}}
+
+\begin{checklist}
+\item Open a Journal Finder (Elsevier / Springer / Taylor \& Francis) \textbf{or} WikiCFP.
+\item Paste the working title and the sample abstract above.
+\item Choose \textbf{3 candidate venues} (tourism / hospitality / Asia-Pacific).
+\item Fill the table below from each venue's ``About / For Authors'' page.
+\end{checklist}
+
+\begin{center}\small
+\begin{tabular}{@{}p{4.2cm}cccc@{}}
+\toprule
+\textbf{Venue} & \textbf{Scope fit (1--5)} & \textbf{Time to 1st decision} & \textbf{Next deadline} & \textbf{Indexed?} \\
+\midrule
+\rule{0pt}{2.4ex}\dotfill & & & & \\
+\rule{0pt}{2.4ex}\dotfill & & & & \\
+\rule{0pt}{2.4ex}\dotfill & & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Pick one} to write toward: \underline{\hspace{7cm}}. Note its template name (e.g.\ \texttt{elsarticle}, \texttt{interact}).
+
+%================= STEP 2 =================
+\section{Set up the LaTeX project on Overleaf \hfill {\normalfont\small (Module 2 $\cdot$ 30 min)}}
+
+\begin{checklist}
+\item Create a free \href{https://www.overleaf.com}{Overleaf} account; \emph{New Project} $\rightarrow$ start from your venue's template.
+\item Replace the title with \textbf{``Incoming Tourist Trends in Thailand, 2017--2024''} and add your name.
+\item Paste the sample abstract into the abstract field.
+\item Add four sections and two placeholders:
+\end{checklist}
+
+\begin{lstlisting}[language=,]
+\section{Introduction}
+\section{Data}
+\section{Results}
+% Fig.~\ref{fig:arr} and Table~\ref{tab:arrivals} go here (Steps 5--6)
+\section{Discussion}
+\end{lstlisting}
+
+\begin{checklist}
+\item Click \textbf{Recompile}; fix any red errors in the log until you get a clean PDF.
+\end{checklist}
+
+%================= STEP 3 =================
+\section{Literature review $\rightarrow$ reference database \hfill {\normalfont\small (Module 4 $\cdot$ 25 min)}}
+
+\subsection*{Search \& discovery tools}
+\begin{checklist}
+\item \textbf{Google Scholar} --- search \texttt{"Thailand inbound tourism"}, \texttt{"COVID-19 tourism recovery"}, \texttt{"tourism demand forecasting"}. Use ``Cited by'' to snowball; \emph{Cite}~$\rightarrow$~\textbf{BibTeX} to export single items; set an \emph{Alert}.
+\item \textbf{ResearchRabbit} (free) --- add a seed paper, explore the recommendation / citation network, sync to Zotero.
+\end{checklist}
+
+\subsection*{AI tools --- use the free version (any account)}
+\begin{checklist}
+\item \textbf{Consensus} --- ask ``\emph{Has Thai inbound tourism recovered after COVID-19?}''; get an evidence-based answer with real citations.
+\item \textbf{Connected Papers} --- enter a seed paper; read the visual graph to find foundational vs.\ derivative work.
+\item \textbf{SciSpace} --- ``chat with PDF'' to extract each paper's method, data, and results into a comparison table.
+\end{checklist}
+{\small\emph{Note: Chula AIX (\href{https://aix.car.chula.ac.th/?product_cat=subscribed-ai-tools}{aix.car.chula.ac.th}) provides paid tiers of these tools, usable at the Central Library on-site. For this workshop, the free versions are enough.}}
+
+\subsection*{Draft the review with NotebookLM}
+\begin{checklist}
+\item Upload your 8--10 PDFs as \emph{sources} in \href{https://notebooklm.google.com}{NotebookLM}.
+\item Prompt: \texttt{"For each source, list the research question, method, data, and main finding."} $\rightarrow$ paste the keys into your notes.
+\item Prompt: \texttt{"Group these sources into themes and draft a literature-review outline."} Verify every quote against the source.
+\end{checklist}
+
+\subsection*{Get your BibTeX (Zotero is optional)}
+\begin{checklist}
+\item \textbf{Quickest:} in Google Scholar click \emph{Cite}~$\rightarrow$~\emph{BibTeX} and paste into \texttt{references.bib}. Same from most DOI / publisher pages.
+\item Or ask \textbf{NotebookLM} / \textbf{SciSpace} for the BibTeX of each source --- then verify authors, year, DOI.
+\item Set readable cite keys (e.g.\ \texttt{chen2022recovery}, \texttt{unwto2024barometer}); collect \textbf{8--10} entries.
+\item \emph{Optional:} use \href{https://www.zotero.org}{Zotero} (+ Better BibTeX) to manage many papers, then export the collection to BibTeX; upload \texttt{references.bib} to Overleaf.
+\end{checklist}
+
+\begin{tcolorbox}[colback=softbg,colframe=chulapinkdk,boxrule=0.7pt,arc=2pt,title=\textbf{AI ethics --- before you go further},fonttitle=\color{white},colbacktitle=chulapinkdk]
+\small
+\textbf{You} are the author and are accountable; AI is never an author. \textbf{Verify every AI-suggested
+citation} against the real paper (chatbots fabricate references). Do not upload confidential or
+unpublished third-party material to public tools. Never let AI generate or alter data, results, or images.
+\textbf{Disclose} AI use per your venue:
+Elsevier wants a declaration in its own section before the references (no AI image generation);
+Taylor \& Francis wants the tool name + version, how, and why in the Methods or Acknowledgements.
+\textbf{Always read your target venue's ``Guide for Authors''.}
+\end{tcolorbox}
+
+%================= STEP 4 =================
+\section{Citations with BibTeX \hfill {\normalfont\small (Module 5 $\cdot$ 25 min)}}
+
+Add to your preamble and end (classic BibTeX shown; use BibLaTeX if your template requires it):
+\begin{lstlisting}[language=,]
+\bibliographystyle{apalike}     % match your venue's required style
+...
+Arrivals rebounded strongly by 2024 \cite{chen2022recovery}.
+...
+\bibliography{references}        % at the end, before \end{document}
+\end{lstlisting}
+
+\begin{checklist}
+\item Cite at least \textbf{4} references across Introduction and Discussion.
+\item Recompile (Overleaf runs bibtex automatically) until there are \textbf{no} ``undefined citation'' warnings.
+\item Confirm the reference list appears and is formatted in the venue's style.
+\end{checklist}
+
+%================= STEP 5 =================
+\section{AI: turn the Excel results into a LaTeX table \hfill {\normalfont\small (Module 6 $\cdot$ 25 min)}}
+
+\begin{checklist}
+\item In \texttt{tourist-data.xlsx}, make a pivot of \textbf{total arrivals by year (2017--2024)} (sum of \texttt{Number} grouped by \texttt{Year}).
+\item Copy the pivot as CSV text, then give your AI assistant this prompt:
+\end{checklist}
+
+\begin{promptbox}
+I use the \texttt{elsarticle} class with \texttt{booktabs}. Convert this CSV into a LaTeX table,
+with a caption ``Thai tourist arrivals by year'' and label \texttt{tab:arrivals}. Right-align the
+numbers, give compilable code, and list any packages needed.\\[2pt]
+\texttt{Year,Arrivals\\2017,35591978\\2018,38178194\\...\\2024,35545714}
+\end{promptbox}
+
+\begin{checklist}
+\item Paste the AI output into Overleaf; compile.
+\item \textbf{Verify every number} against the answer key below; reference the table in the text with \texttt{Table~\textbackslash ref\{tab:arrivals\}}.
+\end{checklist}
+
+\textbf{Answer key (verify against this):}
+\begin{center}\small
+\begin{tabular}{@{}lr|lr@{}}
+\toprule
+Year & Arrivals & Year & Arrivals \\
+\midrule
+2017 & 35{,}591{,}978 & 2021 & \textbf{510{,}767} \\
+2018 & 38{,}178{,}194 & 2022 & 11{,}065{,}226 \\
+2019 & \textbf{39{,}916{,}251} & 2023 & 28{,}150{,}016 \\
+2020 & 6{,}725{,}193 & 2024 & 35{,}545{,}714 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%================= STEP 6 =================
+\section{AI: draw a chart and import the graphic \hfill {\normalfont\small (Module 7 $\cdot$ 25 min)}}
+
+\begin{checklist}
+\item Ask your AI assistant for a plotting script (prompt below), then run it. \textbf{No Python installed?} Run it free in \href{https://colab.research.google.com}{Google Colab} (\emph{New notebook} $\rightarrow$ upload the xlsx $\rightarrow$ Run); \texttt{pandas}/\texttt{matplotlib} are pre-installed.
+\end{checklist}
+
+\begin{promptbox}
+Write a Python script that reads \texttt{tourist-data.xlsx} sheet \texttt{Tourist-Number-Data},
+sums \texttt{Number} by \texttt{Year}, and plots a line chart of arrivals (in millions) for 2017--2024
+with labeled axes and markers. Save it as a vector PDF \texttt{arrivals.pdf}. No chart title.
+\end{promptbox}
+
+Expected starter script:
+\begin{lstlisting}[language=,]
+import pandas as pd, matplotlib.pyplot as plt
+df = pd.read_excel("tourist-data.xlsx", sheet_name="Tourist-Number-Data")
+s = df.groupby("Year")["Number"].sum() / 1e6
+plt.figure(figsize=(5,3)); plt.plot(s.index, s.values, marker="o")
+plt.ylabel("Arrivals (millions)"); plt.xlabel("Year")
+plt.tight_layout(); plt.savefig("arrivals.pdf")
+\end{lstlisting}
+
+\begin{checklist}
+\item Check the curve: peak in 2019, trough in 2021, recovery by 2024.
+\item Upload \texttt{arrivals.pdf} to Overleaf and import it:
+\end{checklist}
+
+\begin{lstlisting}[language=,]
+\begin{figure}[t]\centering
+  \includegraphics[width=.7\linewidth]{arrivals.pdf}
+  \caption{Thai tourist arrivals, 2017--2024.}\label{fig:arr}
+\end{figure}
+\end{lstlisting}
+
+\begin{checklist}
+\item Reference it in the text: ``As Fig.~\texttt{\textbackslash ref\{fig:arr\}} shows, arrivals collapsed in 2020--21 and recovered by 2024.''
+\item Recompile to a clean PDF.
+\item \textbf{Bonus:} ask AI for a TikZ or Mermaid diagram of your workflow (Excel $\rightarrow$ Python $\rightarrow$ Figure $\rightarrow$ LaTeX), or a bar chart of the top-10 source markets in 2024.
+\end{checklist}
+
+%================= STEP 7 =================
+\section{Equations: typeset the Gaussian analysis \hfill {\normalfont\small (Module 8 $\cdot$ 20 min)}}
+
+\begin{checklist}
+\item In Colab, fit a normal distribution to \texttt{ln(arrivals)} for 2024 and read off $\mu,\sigma$.
+\end{checklist}
+
+\begin{promptbox}
+In \texttt{tourist-data.xlsx} (sheet \texttt{Tourist-Number-Data}), take the 2024 rows with arrivals > 0,
+compute \texttt{x = ln(Number)}, report its mean and standard deviation, and plot a density histogram of
+\texttt{x} with the fitted normal curve overlaid. Save it as \texttt{gaussian\_fit.pdf}.
+\end{promptbox}
+
+\begin{checklist}
+\item You should get about $\mu \approx 11.1$ and $\sigma \approx 2.0$ (median $e^{\mu}\approx 67{,}000$ arrivals per market).
+\item Add a \texttt{Methods} section with the Gaussian PDF --- LaTeX renders math far better than a word processor:
+\end{checklist}
+
+\begin{lstlisting}[language=,]
+\usepackage{amsmath}   % in the preamble
+...
+\begin{equation}
+  f(x)=\frac{1}{\sigma\sqrt{2\pi}}
+       \exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+  \label{eq:gauss}
+\end{equation}
+Log-arrivals are well described by Eq.~\eqref{eq:gauss}.
+\end{lstlisting}
+
+\begin{checklist}
+\item Include \texttt{gaussian\_fit.pdf} as a figure, refer to it with \texttt{Eq.~\textbackslash eqref\{eq:gauss\}}, and recompile.
+\end{checklist}
+
+%================= STEP 8 =================
+\section{From paper to slides: Beamer \hfill {\normalfont\small (Module 9 $\cdot$ 20 min)}}
+
+\begin{checklist}
+\item Start a new \emph{Beamer} project on Overleaf (\texttt{\textbackslash documentclass\{beamer\}}).
+\item Reuse your manuscript: copy the Gaussian equation and \texttt{gaussian\_fit.pdf} into one frame.
+\end{checklist}
+
+\begin{lstlisting}[language=,]
+\documentclass{beamer}
+\usepackage{amsmath}
+\begin{document}
+\begin{frame}{Log-arrivals are Gaussian}
+  \begin{equation*}
+    f(x)=\frac{1}{\sigma\sqrt{2\pi}}
+         \exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+  \end{equation*}
+  \includegraphics[width=.6\linewidth]{gaussian_fit.pdf}
+\end{frame}
+\end{document}
+\end{lstlisting}
+
+\begin{checklist}
+\item Add a second frame with your arrivals table or chart --- copy-paste from the paper, nothing redrawn.
+\item Compile. The equation and figure are \emph{identical} to the manuscript: one source of truth.
+\end{checklist}
+
+%================= FINISH =================
+\section{Finish line: what you should have}
+
+\begin{checklist}
+\item A 3-row venue comparison table and one chosen target venue.
+\item An Overleaf project on a real template: title, authors, abstract, sections.
+\item \texttt{references.bib} with 8--10 references, 4+ cited in the text.
+\item Table~\texttt{tab:arrivals} (arrivals by year), numbers verified.
+\item Figure \texttt{arrivals.pdf} imported and cross-referenced.
+\item A \texttt{Methods} section with the Gaussian equation (\texttt{eq:gauss}) and \texttt{gaussian\_fit.pdf}.
+\item A Beamer slide that reuses the same equation and figure.
+\item A compiled PDF with \textbf{no} errors or undefined-reference warnings.
+\end{checklist}
+
+\vspace{0.4em}
+{\color{chulapink}\hrule height 1pt}
+\vspace{0.3em}
+{\small\textbf{Remember:} AI drafts code, tables, and figures fast --- but \textbf{you} verify every number
+against \texttt{tourist-data.xlsx} and \textbf{you} are accountable for the result. Disclose AI use per your venue's policy.}
+
+\end{document}

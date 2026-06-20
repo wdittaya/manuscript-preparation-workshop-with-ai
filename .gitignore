@@ -1,0 +1,13 @@
+# Git ignore file for LaTeX projects
+*.aux
+*.bbl
+*.blg
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+
+example*
+exercise*
